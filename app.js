@@ -1,4 +1,5 @@
-var tl = new TimelineMax();
+var tl = new TimelineMax(),
+   replay = document.getElementById("replay");;
 
 tl.from(".text", 0.9, {opacity: 0})
    .from(".logo", {duration: 0.7, ease: Back.easeInOut, y: -100})
@@ -12,3 +13,7 @@ tl.from(".text", 0.9, {opacity: 0})
    .to(".twitter", 0.5, {opacity: 0, scale: 0, x:-170, y: 90})
    .to(".whatsapp", 0.5, {opacity: 0, scale: 0, x:-150, y: 90})
    .to(".all", 0.5, {opacity: 1}, '+=.5')
+
+replay.onclick = function () {
+   tl.play(0);
+}
